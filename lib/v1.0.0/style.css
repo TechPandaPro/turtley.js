@@ -1,0 +1,14 @@
+html.turtley-fullscreen, body.turtley-fullscreen {
+  height: 100%; 
+}
+
+body.turtley-fullscreen {
+  margin: 0;
+  overflow: hidden;
+}
+
+body.turtley-container.turtley-fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

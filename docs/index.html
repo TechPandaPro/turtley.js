@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>turtley.js Docs</title>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <!-- files for docs -->
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/script.js" defer></script>
+  </head>
+  <body>
+    <nav class="docsNav">
+      <ul class="docsNavList"></ul>
+    </nav>
+    <main class="docsContent">
+      <h1><span class="libName">turtley.js</span> Docs</h1>
+      <h2>About turtley.js</h2>
+      <p>turtley.js is an easy way to learn the basics of turtle graphics—using JavaScript! Whether you're a beginner or an expert at programming, turtley.js allows you to create turtle graphics, easy or complex, as quickly as possible.</p>
+      <h2>Adding turtley.js to your projects</h2>
+      <p>Adding turtley.js to your project is easy! Simply insert this line of HTML above your other script tags (in either your <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag):</p>
+      <pre class="codeSnippet"><code class="installCode language-html"></code></pre>
+      <h2>Initializing the turtle</h2>
+      <p>A new turtley.js instance can be initialized like so:</p>
+      <pre class="codeSnippet"><code class="initExample language-javascript"></code></pre>
+      <p>To ensure that turtley.js performs as expected, please remember to always place your code within the <code>turtley.onReady</code> function. turtley.js will call this function once everything is loaded and ready to go!</p>
+      <p>To help keep turtley.js straightforward, <em>all</em> the configuration happens from within the <code>init()</code> method, meaning the constructor should always remain the same. To learn more about the <code>init()</code> method, see the documentation <a href="#turtle.init">here</a>.</p>
+      <h2>Async/await caveat</h2>
+      <p>It is important to note the way that turtley.js commands are handled and executed. In turtley.js, all commands are added to a queue, and then the commands execute in order and wait for each other to finish. Therefore, functional turtley.js programs can be written without async/await. However, even though this convenient feature exists, it is still <strong>highly recommended</strong> that you use async/await with turtley.js. Consider the following code:</p>
+      <pre class="codeSnippet"><code class="asyncAwait1 language-javascript"></code></pre>
+      <p>Why does it output "0, 0" both times? Well, turtle graphics are typically animated (turtley,js included), so <code>turtle.forward(100)</code> does not actually move the turtle right away, but rather over a span of time. However, this code does not wait for the turtle to finish moving forward, so the second set of coordinates does not change like we would expect.</p>
+      <p>This can certainly lead to confusion when implementing custom logic, so it is recommended to get in the habit of always using async/await with turtley.js commands. Assuming this code was running inside of an async function, we could fix it like so:</p>
+      <pre class="codeSnippet"><code class="asyncAwait2 language-javascript"></code></pre>
+    </main>
+  </body>
+</html>

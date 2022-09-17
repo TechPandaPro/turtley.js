@@ -1,0 +1,144 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+.docsNav, .docsContent {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.docsNav {
+  width: 15vw;
+  min-width: 210px;
+  padding: 5px;
+}
+
+.docsContent {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 25px;
+}
+
+.docsNavList, .classNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.docsNavList {
+  padding: 15px;
+}
+
+.docsNavList > li:not(:first-child) {
+  margin-top: 10px;
+}
+
+.classNavList {
+  margin-left: 10px;
+}
+
+.methodContainer {
+  display: flow-root;
+}
+
+.paramTableContainer {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.paramTable {
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.paramTable th, .paramTable td {
+  max-width: 200px;
+  overflow-wrap: anywhere;
+  padding: 5px 15px;
+}
+
+.docsMethod, .docsProperty {
+  overflow-wrap: anywhere;
+  font-weight: normal;
+}
+
+.docsMethodSpan, .docsPropertySpan {
+  font-weight: bold;
+}
+
+.docsParamsSpan {
+  font-style: italic;
+}
+
+.libName {
+  color: #2abcb4;
+}
+
+.codeSnippet {
+  max-width: 100%;
+  display: inline-block;
+}
+
+.codeSnippet .hljs {
+  padding: 15px;
+  border-radius: 15px;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: #000000;
+  }
+
+  a {
+    color: #0000ff;
+  }
+  
+  .docsNav {
+    background-color: #faebd7;
+  }
+  
+  .docsContent {
+    background-color: #f5f5f5;
+  }
+
+  .paramTable th, .paramTable td {
+    border: 2px solid #000000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #ffffff;
+  }
+
+  a {
+    color: #87ceeb;
+  }
+  
+  .docsNav {
+    background-color: rgb(30 30 30);
+  }
+  
+  .docsContent {
+    background-color: rgb(10 10 10);
+  }
+
+  .paramTable th, .paramTable td {
+    border: 2px solid #ffffff;
+  }
+}
+
+@media (max-width: 600px) {
+  .docsNav {
+    display: none;
+  }
+}

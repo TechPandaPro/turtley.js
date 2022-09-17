@@ -1,0 +1,243 @@
+[
+  {
+    "class": "turtle",
+    "header": "Basic commands",
+    "navClass": "turtley.Turtle",
+    "methods": [
+      {
+        "name": "init",
+        "header": "Generic methods",
+        "description": "Initializes the turtley.js instance. Parameters that are labeled with a default of \"none\" depend on the values of other parameters. For example, options.fullscreen will be true by default unless a width and height are specified, in which case it will be false by default.",
+        "params": [
+          {
+            "name": "options.width",
+            "type": "number",
+            "default": "none",
+            "description": "The width of the canvas"
+          },
+          {
+            "name": "options.height",
+            "type": "number",
+            "default": "none",
+            "description": "The height of the canvas"
+          },
+          {
+            "name": "options.appendTo",
+            "type": "HTMLElement",
+            "default": "document.body",
+            "description": "The element to append the canvas to"
+          },
+          {
+            "name": "options.fullscreen",
+            "type": "Boolean",
+            "default": "none",
+            "description": "Whether or not the canvas should be \"fullscreen\" (relative to the canvas's parent)"
+          }
+        ]
+      },
+      {
+        "name": "resize",
+        "header": "Generic methods",
+        "description": "Resizes the canvas based on the width, height, and fullscreen options. While this method is primarily for internal use, turtley.js does not listen for changes in the parent container's size unless its parent is the document's body. Therefore, if the container is not the document's body and its size changes after initialization, this method should be manually called.",
+        "params": []
+      },
+      {
+        "name": "setSpeed",
+        "description": "Sets the speed of the turtle",
+        "params": [
+          {
+            "name": "speed",
+            "type": "number",
+            "description": "The new speed of the turtle"
+          }
+        ]
+      },
+      {
+        "name": "penDown",
+        "description": "Enable drawing on move. This also creates a new shape that can be filled.",
+        "params": []
+      },
+      {
+        "name": "penUp",
+        "description": "Disable drawing on move. This resets the current shape.",
+        "params": []
+      },
+      {
+        "name": "showTurtle",
+        "description": "Show the turtle on the canvas",
+        "params": []
+      },
+      {
+        "name": "hideTurtle",
+        "description": "Hide the turtle on the canvas",
+        "params": []
+      },
+      {
+        "name": "setPenColor",
+        "description": "Set the color of the pen",
+        "params": [
+          {
+            "name": "color",
+            "type": "string",
+            "description": "The new color of the pen"
+          }
+        ]
+      },
+      {
+        "name": "setPenSize",
+        "description": "Set the size of the pen (line width)",
+        "params": [
+          {
+            "name": "size",
+            "type": "number",
+            "description": "The new size of the pen"
+          }
+        ]
+      },
+      {
+        "name": "setFillColor",
+        "description": "Set the fill color",
+        "params": [
+          {
+            "name": "color",
+            "type": "string",
+            "description": "The new fill color"
+          }
+        ]
+      },
+      {
+        "name": "setBackgroundColor",
+        "description": "Set the background color of the canvas",
+        "params": [
+          {
+            "name": "color",
+            "type": "string",
+            "description": "The new background color"
+          }
+        ]
+      },
+      {
+        "name": "fillShape",
+        "description": "Fills the most recent shape",
+        "params": []
+      },
+      {
+        "name": "forward",
+        "description": "Moves the turtle forward by stepCount, drawing a line if the pen is down",
+        "params": [
+          {
+            "name": "stepCount",
+            "type": "number",
+            "description": "How many steps to move the turtle by (in pixels)"
+          }
+        ]
+      },
+      {
+        "name": "backward",
+        "description": "Moves the turtle backward by stepCount, drawing a line if the pen is down",
+        "params": [
+          {
+            "name": "stepCount",
+            "type": "number",
+            "description": "How many steps to move the turtle by (in pixels)"
+          }
+        ]
+      },
+      {
+        "name": "moveTo",
+        "description": "Moves the turtle, without animation, to the specified position on the canvas. This also resets the current shape.",
+        "params": [
+          {
+            "name": "x",
+            "type": "number",
+            "description": "The x coordinate to move the turtle to"
+          },
+          {
+            "name": "y",
+            "type": "number",
+            "description": "The y coordinate to move the turtle to"
+          }
+        ]
+      },
+      {
+        "name": "rotateLeft",
+        "description": "Rotates the turtle counterclockwise by the specified degrees",
+        "params": [
+          {
+            "name": "degrees",
+            "type": "number",
+            "description": "How many degrees to rotate the turtle by"
+          }
+        ]
+      },
+      {
+        "name": "rotateRight",
+        "description": "Rotates the turtle clockwise by the specified degrees",
+        "params": [
+          {
+            "name": "degrees",
+            "type": "number",
+            "description": "How many degrees to rotate the turtle by"
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "name": "x",
+        "description": "The current x position of the turtle"
+      },
+      {
+        "name": "y",
+        "description": "The current y position of the turtle"
+      },
+      {
+        "name": "rotation",
+        "description": "The current rotation of the turtle in radians"
+      },
+      {
+        "name": "speed",
+        "description": "The current speed of the turtle"
+      },
+      {
+        "name": "penColor",
+        "description": "The current color of the pen"
+      },
+      {
+        "name": "fillColor",
+        "description": "The current shape fill color"
+      },
+      {
+        "name": "backgroundColor",
+        "description": "The current background color of the canvas"
+      },
+      {
+        "name": "canvasWidth",
+        "description": "The current width of the canvas"
+      },
+      {
+        "name": "canvasHeight",
+        "description": "The current height of the canvas"
+      }
+    ]
+  },
+  {
+    "class": "util",
+    "header": "Utility functions",
+    "navClass": "turtley.util",
+    "methods": [
+      {
+        "name": "isColor",
+        "description": "Returns a Boolean which is true if the given argument is a valid CSS color. Note that all CSS colors can be used with turtley.js (color keywords, hex colors, rgb, hsl, etc).",
+        "params": [
+          {
+            "name": "color",
+            "type": "any",
+            "description": "The value to be checked"
+          }
+        ]
+      }
+    ],
+    "properties": []
+  }
+]
